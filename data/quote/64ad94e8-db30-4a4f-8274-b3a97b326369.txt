@@ -1,0 +1,4 @@
+Car Value: 5000
+Risk Rating: 3
+Monthly PremiumL: 12.5
+Yearly Premium: 150
