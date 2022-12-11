@@ -1,4 +1,3 @@
-const { assert } = require('chai');
 const quote = require("./ms3")
 const request = require('supertest')('localhost:3000');
 
@@ -10,7 +9,7 @@ const testCases = [
         expected: [27.5, 330]
     },
     {
-        scenario: "when car_value = 50 00, risk_rating = 3",
+        scenario: "when car_value = '50 00', risk_rating = 3",
         car_value: "50 00",
         risk_rating: 3,
         expected: "Error: Input contains string"
@@ -43,9 +42,3 @@ describe("quote tests", () => {
         })
     })
 })
-
-// describe('Users API', () => {
-//     it('Get /quote').expect(200).then((res) => {
-//         assert.equal(res.text, ['Test']);
-//     })
-// })

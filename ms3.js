@@ -6,7 +6,7 @@ function quote(car_value, risk_rating) {
     var errorNegative = "Error: Input contains negative number";
     var errorNull = "Error: Input is empty";
 
-    if (typeof car_value === "number" && typeof risk_rating === "number" && car_value > 0 && risk_rating > 0) {
+    if (typeof car_value === "number" && typeof risk_rating === "number" && car_value > 0 && risk_rating > 0 && risk_rating < 6) {
         yearlyPremium = Math.floor(car_value * risk_rating / 100);
         monthlyPremium = Math.round(yearlyPremium / 12 * 100) / 100;
 
