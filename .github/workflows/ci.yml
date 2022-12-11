@@ -36,4 +36,4 @@ jobs:
           echo test, and deploy your project.
 
       - name: Another Script
-        run: New command!
+        run: echo New command!
