@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: webappMission4
+  AZURE_WEBAPP_NAME: mission4Webapp
   AZURE_WEBAPP_PATH: "."
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
