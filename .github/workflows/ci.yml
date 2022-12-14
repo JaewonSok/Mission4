@@ -32,7 +32,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: jest
+        run: jest ms3.spec.js
 
       - name: Login via Azure CLI
         uses: azure/login@v1
