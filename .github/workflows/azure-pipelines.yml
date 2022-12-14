@@ -3,8 +3,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 on:
   push:
-    branches:
-      - "main"
+    branches: ["main"]
 trigger:
   - main
 
