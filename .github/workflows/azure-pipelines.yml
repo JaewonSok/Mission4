@@ -20,7 +20,7 @@ variables:
 
   # Agent VM image name
   vmImageName: "ubuntu-latest"
-
+jobs:
 stages:
   - stage: Build
     displayName: Build and push stage
