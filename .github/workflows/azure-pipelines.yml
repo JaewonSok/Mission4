@@ -28,6 +28,8 @@ stages:
   - stage: Build
     displayName: Build and push stage
     jobs:
+      job_build:
+        name: Build
       - job: Build
         displayName: Build
         pool:
