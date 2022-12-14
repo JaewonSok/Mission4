@@ -7,7 +7,11 @@ trigger:
 
 resources:
   - repo: self
-
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: "88353728-4bea-4fe0-ad23-d2d6706a6006"
