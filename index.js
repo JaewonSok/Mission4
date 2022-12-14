@@ -51,3 +51,4 @@ app.get("/quote/:id", async (req, res) => {
 });
 
 app.listen(3000, () => console.log("Running"));
+<div class="button" onmouseover="glow()" onclick="start()"></div>
