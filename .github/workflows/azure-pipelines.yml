@@ -26,7 +26,6 @@ jobs:
 stages:
   - stage: Build
     displayName: Build and push stage
-    
       - job: Build
         displayName: Build
         pool:
