@@ -10,9 +10,6 @@ on:
   #pull_request:
   # branches: [ "main" ]
 
-resources:
-  - repo: self
-
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: "88353728-4bea-4fe0-ad23-d2d6706a6006"
