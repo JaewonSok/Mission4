@@ -28,12 +28,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run tests
-        run: jest ms3.spec.js
-
       - name: Login via Azure CLI
         uses: azure/login@v1
         with:
