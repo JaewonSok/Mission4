@@ -52,18 +52,5 @@ app.get("/quote/:id", async (req, res) => {
 
 app.listen(3000, () => console.log("Running"));
 
-
-var http = require('http'),
-    fs = require('fs');
-
-
-fs.readFile('./index.html', function (err, html) {
-    if (err) {
-        throw err;
-    }
-    http.createServer(function (request, response) {
-        response.writeHeader(200, { "Content-Type": "text/html" });
-        response.write(html);
-        response.end();
-    }).listen(3000);
-});
+app.get('/', (req, res) => res.json({ message: 'Testing' }))
+app.listen(process.env.PORT || 80)
