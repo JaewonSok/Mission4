@@ -9,13 +9,26 @@ on:
     branches: ["main"]
   #pull_request:
   # branches: [ "main" ]
+trigger:
+  - main
+
+resources:
+  - repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: "88353728-4bea-4fe0-ad23-d2d6706a6006"
+  imageRepository: "jaewonsokmission"
+  containerRegistry: "mission4containerregistry.azurecr.io"
+  dockerfilePath: "$(Build.SourcesDirectory)/Dockerfile"
+  tag: "$(Build.BuildId)"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-env:
-  AZURE_WEBAPP_NAME: mission4Webapp
-  AZURE_WEBAPP_PATH: "."
+#env:
+# AZURE_WEBAPP_NAME: mission4Webapp
+#AZURE_WEBAPP_PATH: "."
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -41,21 +54,6 @@ jobs:
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_203240F518D14D0495913F908BB807F7 }}
           package: .
-      trigger:
-  - main
-
-resources:
-  - repo: self
-
-variables:
-  # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: "88353728-4bea-4fe0-ad23-d2d6706a6006"
-  imageRepository: "jaewonsokmission"
-  containerRegistry: "mission4containerregistry.azurecr.io"
-  dockerfilePath: "$(Build.SourcesDirectory)/Dockerfile"
-  tag: "$(Build.BuildId)"
-
-  # Agent VM image name
   vmImageName: "ubuntu-latest"
 
 stages:
