@@ -54,7 +54,7 @@ jobs:
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_203240F518D14D0495913F908BB807F7 }}
           package: .
-  vmImageName: "ubuntu-latest"
+  #vmImageName: "ubuntu-latest"
 
 stages:
   - stage: Build
