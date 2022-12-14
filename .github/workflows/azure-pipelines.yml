@@ -26,10 +26,8 @@ on:
   # branches: [ "main" ]
 stages:
   - stage: Build
-    displayName: Build and push stage
     jobs:
-      job_build:
-        name: Build
+    displayName: Build and push stage
       - job: Build
         displayName: Build
         pool:
