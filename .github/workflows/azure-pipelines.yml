@@ -18,12 +18,7 @@ variables:
 
   # Agent VM image name
   vmImageName: "ubuntu-latest"
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: ["main"]
-  #pull_request:
-  # branches: [ "main" ]
+
 stages:
   - stage: Build
     displayName: Build and push stage
