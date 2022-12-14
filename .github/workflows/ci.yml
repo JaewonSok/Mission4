@@ -41,3 +41,37 @@ jobs:
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_203240F518D14D0495913F908BB807F7 }}
           package: .
+      trigger:
+  - main
+
+resources:
+  - repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: "88353728-4bea-4fe0-ad23-d2d6706a6006"
+  imageRepository: "jaewonsokmission"
+  containerRegistry: "mission4containerregistry.azurecr.io"
+  dockerfilePath: "$(Build.SourcesDirectory)/Dockerfile"
+  tag: "$(Build.BuildId)"
+
+  # Agent VM image name
+  vmImageName: "ubuntu-latest"
+
+stages:
+  - stage: Build
+    displayName: Build and push stage
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: Docker@2
+            displayName: Build and push an image to container registry
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository)
+              dockerfile: $(dockerfilePath)
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: "latest"
