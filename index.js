@@ -5,7 +5,7 @@ const _ = require("lodash");
 const { v4: uuid } = require("uuid");
 const quote = require("./ms3");
 const { allowedNodeEnvironmentFlags } = require('process');
-
+const port = process.env.PORT || '3000';
 const app = express();
 
 app.use(express.json());
