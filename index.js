@@ -61,4 +61,8 @@ app.get('/', (req, res) => {
 //app.get("/", (req, res) => {
 //res.sendFile("/index.html");
 //});
-app.listen(process.env.PORT || 80)
+app.listen(port, () => {
+
+    console.log(`listening at http://localhost:${port}`);
+
+});
