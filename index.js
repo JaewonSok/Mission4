@@ -55,5 +55,5 @@ app.listen(process.env.PORT, () => console.log("Running"));
 //app.get('/', (req, res) => res.json({ message: 'Testing' }))
 //app.get('/', (req, res) => {res.json({ message: 'Testing' });});
 app.get("/", (req, res) => {
-    res.sendFile("/index.html");
+    res.sendFile("./index.html");
 });
